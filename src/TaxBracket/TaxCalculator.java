@@ -20,19 +20,20 @@ public class TaxCalculator {
 
         switch(filingStatus) {
             case 1:
-                taxBracket = new SingleTaxBracket();
+                taxBracket = new SingleTaxBracket(income);
                 break;
             case 2:
-                taxBracket = new HeadOfHouseholdTaxBracket();
+                taxBracket = new HeadOfHouseholdTaxBracket(income);
                 break;
             case 3:
-                taxBracket = new MarriedJointlyTaxBracket();
+                taxBracket = new MarriedJointlyTaxBracket(income);
             case 4:
-                taxBracket = new MarriedSeparatelyTaxBracket();
+                taxBracket = new MarriedSeparatelyTaxBracket(income);
             default:
                 System.out.println("Invaild");
                 System.exit(1);
         }
+        System.out.println("Tax owed: " + taxBracket.calculateTax());
 
     }
 }

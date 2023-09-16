@@ -1,6 +1,13 @@
 package TaxBracket;
 
 public class TaxBracket {
-    private double income;
-    private double taxRate;
+    double income;
+    double taxRate;
+    public TaxBracket (){
+
+    }
+    public double calculateTax(){
+        return income*taxRate;
+    }
+
 }
